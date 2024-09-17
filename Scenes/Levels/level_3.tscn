@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7utsbvtn0e66"]
+
+[ext_resource type="PackedScene" uid="uid://dey27y6c4rfs3" path="res://Scenes/Levels/level_2.tscn" id="1_mcm7s"]
+[ext_resource type="PackedScene" uid="uid://dr7ejytcij7vn" path="res://Scenes/enemy.tscn" id="1_w4yn2"]
+
+[node name="level_3" instance=ExtResource("1_mcm7s")]
+target_kill_count = 12
+next_level_scene_path = "res://Scenes/booyah.tscn"
+current_level_scene_path = "res://Scenes/Levels/level_3.tscn"
+
+[node name="Archer" parent="." index="1" groups=["level"]]
+position = Vector2(-2, 55)
+
+[node name="enemy4" parent="." index="5"]
+position = Vector2(270, -271)
+
+[node name="enemy8" parent="." index="9"]
+position = Vector2(-444, -171)
+
+[node name="enemy9" parent="." index="10" instance=ExtResource("1_w4yn2")]
+position = Vector2(-364, 261)
+
+[node name="enemy10" parent="." index="11" instance=ExtResource("1_w4yn2")]
+position = Vector2(-190, -167)
+
+[node name="enemy11" parent="." index="12" instance=ExtResource("1_w4yn2")]
+position = Vector2(-132, 286)
+
+[node name="enemy12" parent="." index="13" instance=ExtResource("1_w4yn2")]
+position = Vector2(-395, -46)
+
+[node name="number_level" parent="interface" index="0"]
+text = "Level 3"

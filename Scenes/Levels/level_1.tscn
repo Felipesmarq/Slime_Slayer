@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://batb3u5aciutg"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_3354w"]
+[ext_resource type="PackedScene" uid="uid://dfp65adtn24jc" path="res://Scenes/world_map.tscn" id="2_g6dct"]
+[ext_resource type="PackedScene" uid="uid://b7gmrkkw1sle8" path="res://Scenes/player.tscn" id="3_wogok"]
+[ext_resource type="PackedScene" uid="uid://dr7ejytcij7vn" path="res://Scenes/enemy.tscn" id="4_ltskr"]
+[ext_resource type="FontFile" uid="uid://cakhsopuksya2" path="res://Art/kurland.ttf" id="5_0br6j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dtoow"]
+font = ExtResource("5_0br6j")
+font_size = 50
+
+[node name="level_1" type="Node2D" groups=["level"]]
+y_sort_enabled = true
+script = ExtResource("1_3354w")
+target_kill_count = 5
+next_level_scene_path = "res://Scenes/Levels/level_2.tscn"
+current_level_scene_path = "res://Scenes/Levels/level_1.tscn"
+
+[node name="WorldMap" parent="." instance=ExtResource("2_g6dct")]
+
+[node name="Archer" parent="." instance=ExtResource("3_wogok")]
+position = Vector2(-2, 49)
+
+[node name="enemy" parent="." instance=ExtResource("4_ltskr")]
+position = Vector2(330, -281)
+
+[node name="enemy2" parent="." instance=ExtResource("4_ltskr")]
+position = Vector2(-364, -69)
+
+[node name="enemy3" parent="." instance=ExtResource("4_ltskr")]
+position = Vector2(-286, 277)
+
+[node name="enemy4" parent="." instance=ExtResource("4_ltskr")]
+position = Vector2(-440, -204)
+
+[node name="enemy5" parent="." instance=ExtResource("4_ltskr")]
+position = Vector2(278, 224)
+
+[node name="interface" type="CanvasLayer" parent="."]
+
+[node name="number_level" type="Label" parent="interface"]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 70.0
+offset_bottom = 99.0
+text = "Level 1"
+label_settings = SubResource("LabelSettings_dtoow")
+
+[node name="enemies_left" type="Label" parent="interface"]
+offset_left = 30.0
+offset_top = 80.0
+offset_right = 315.0
+offset_bottom = 149.0
+text = "Enemies left: "
+label_settings = SubResource("LabelSettings_dtoow")

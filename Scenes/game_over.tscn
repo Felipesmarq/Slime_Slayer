@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnwcbvck7ixjp"]
+
+[ext_resource type="PackedScene" uid="uid://dfp65adtn24jc" path="res://Scenes/world_map.tscn" id="1_6b8co"]
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_7q8fe"]
+[ext_resource type="FontFile" uid="uid://cakhsopuksya2" path="res://Art/kurland.ttf" id="2_injaj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vyxbp"]
+font = ExtResource("2_injaj")
+font_size = 128
+
+[node name="game_over" type="Control"]
+layout_mode = 3
+anchor_left = 0.148
+anchor_right = 0.755
+anchor_bottom = 1.0
+offset_left = 58.56
+offset_top = 2.0
+offset_right = 320.6
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7q8fe")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.35
+anchor_right = 1.0
+anchor_bottom = 0.979
+offset_left = -0.0499878
+offset_top = -3.0
+offset_bottom = 12.0229
+color = Color(0.533333, 0, 0, 0.662745)
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -508.0
+offset_top = -318.0
+offset_right = -190.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 20
+vertical = true
+
+[node name="restart" type="Button" parent="BoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_injaj")
+theme_override_font_sizes/font_size = 64
+text = "Restart
+"
+
+[node name="main_menu" type="Button" parent="BoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_injaj")
+theme_override_font_sizes/font_size = 64
+text = "Main Menu"
+
+[node name="quit" type="Button" parent="BoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_injaj")
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+
+[node name="WorldMap" parent="." instance=ExtResource("1_6b8co")]
+position = Vector2(485, 356)
+scale = Vector2(1.45, 1.45)
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.267
+anchor_right = 0.76
+anchor_bottom = 1.0
+offset_left = 104.413
+offset_top = 92.0
+offset_right = -340.946
+offset_bottom = -586.0
+text = "You died"
+label_settings = SubResource("LabelSettings_vyxbp")
