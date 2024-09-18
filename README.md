@@ -22,7 +22,7 @@ Um mini-game para atestar aprendizagem básica de gdscript.
 
 - **Equipar o Arco:**
 
- Para equipar o arco, pressione a tecla **E**. O arco permite que você ataque à distância com precisão. Certifique-se de mirar corretamente usando o mouse para direcionar os tiros.
+- Para equipar o arco, pressione a tecla **E**. O arco permite que você ataque à distância com precisão. Certifique-se de mirar corretamente usando o mouse para direcionar os tiros.
 
 ![Logo](https://imgur.com/a/mvzZD9m)
 
