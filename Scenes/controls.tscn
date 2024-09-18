@@ -84,3 +84,14 @@ label_settings = SubResource("LabelSettings_n27gm")
 
 [node name="button_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_obq37")
+
+[node name="Label5" type="Label" parent="."]
+modulate = Color(0.631679, 0, 0.0281015, 1)
+layout_mode = 0
+offset_left = 675.0
+offset_top = 104.0
+offset_right = 1225.0
+offset_bottom = 155.0
+theme_override_fonts/font = ExtResource("1_83t8l")
+theme_override_font_sizes/font_size = 48
+text = "Warning: Slime Explodes!!!"

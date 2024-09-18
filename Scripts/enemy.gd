@@ -48,15 +48,16 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		area.take_damage(damage)
 
 func take_damage(damage):
-	$slime_damaged.play()
 	health = health - damage
 	if health <= 0 and !dead:
 		death()
-		
+	else: 
+		$slime_damaged.play()
 		
 func death():
 	dead = true
 	$AnimatedSprite2D.play("death")
+	$slime_explosion.play()
 	await get_tree().create_timer(1).timeout
 	get_tree().call_group("level", "increase_kill_count")
 	queue_free()

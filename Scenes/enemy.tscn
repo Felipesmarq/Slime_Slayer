@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://dr7ejytcij7vn"]
+[gd_scene load_steps=27 format=3 uid="uid://dr7ejytcij7vn"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_u51dr"]
 [ext_resource type="Texture2D" uid="uid://bvm5kbky315q1" path="res://Art/survivalgame-enemy-slime.png" id="2_8m3o7"]
 [ext_resource type="AudioStream" uid="uid://7b341ndwglji" path="res://GameSounds/Sounds/slime_damaged.wav" id="3_p5h2i"]
+[ext_resource type="AudioStream" uid="uid://cuups0y01mkpb" path="res://GameSounds/Sounds/slime_explosion.wav" id="4_tem20"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_61nap"]
 atlas = ExtResource("2_8m3o7")
@@ -189,6 +190,10 @@ show_percentage = false
 
 [node name="slime_damaged" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_p5h2i")
+
+[node name="slime_explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_tem20")
+volume_db = -8.0
 
 [connection signal="area_entered" from="enemy_hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
