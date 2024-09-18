@@ -1,9 +1,11 @@
-[gd_scene load_steps=81 format=3 uid="uid://bhud846c5lrv0"]
+[gd_scene load_steps=83 format=3 uid="uid://bhud846c5lrv0"]
 
 [ext_resource type="FontFile" uid="uid://cakhsopuksya2" path="res://Art/kurland.ttf" id="1_4i2g1"]
 [ext_resource type="Script" path="res://Scripts/booyah.gd" id="1_t0gaf"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_sjx3x"]
 [ext_resource type="Texture2D" uid="uid://bk4uy6xd4uwyj" path="res://Art/survivalgame-player-green.png" id="3_2b3bm"]
+[ext_resource type="AudioStream" uid="uid://d32fgskeksejt" path="res://GameSounds/Sounds/switch23.ogg" id="5_sgf5s"]
+[ext_resource type="AudioStream" uid="uid://wuxpa310in2c" path="res://GameSounds/Sounds/level_completed.wav" id="6_p8y4m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6kfhx"]
 font = ExtResource("1_4i2g1")
@@ -685,6 +687,13 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4i2g1")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
+
+[node name="button_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_sgf5s")
+
+[node name="level_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_p8y4m")
+volume_db = -15.0
 
 [connection signal="body_entered" from="player/player_hitbox" to="player" method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player/player_hitbox" to="player" method="_on_player_hitbox_body_exited"]

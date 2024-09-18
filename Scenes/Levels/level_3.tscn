@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7utsbvtn0e66"]
+[gd_scene load_steps=4 format=3 uid="uid://b7utsbvtn0e66"]
 
 [ext_resource type="PackedScene" uid="uid://dey27y6c4rfs3" path="res://Scenes/Levels/level_2.tscn" id="1_mcm7s"]
 [ext_resource type="PackedScene" uid="uid://dr7ejytcij7vn" path="res://Scenes/enemy.tscn" id="1_w4yn2"]
+[ext_resource type="AudioStream" uid="uid://wuxpa310in2c" path="res://GameSounds/Sounds/level_completed.wav" id="3_trw64"]
 
 [node name="level_3" instance=ExtResource("1_mcm7s")]
 target_kill_count = 12
@@ -31,3 +32,7 @@ position = Vector2(-395, -46)
 
 [node name="number_level" parent="interface" index="0"]
 text = "Level 3"
+
+[node name="LevelCompleted" type="AudioStreamPlayer" parent="." index="15"]
+stream = ExtResource("3_trw64")
+volume_db = -15.0

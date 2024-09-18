@@ -10,6 +10,7 @@ var kill_count = 0
 @export var current_level_scene_path: String
 
 func _ready() -> void:
+	
 	transition_screen.scene_path = current_level_scene_path
 
 func _process(delta):

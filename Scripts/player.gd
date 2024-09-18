@@ -49,6 +49,7 @@ func _physics_process(delta: float) -> void:
 	$Marker2D.look_at(mouse_pos)
 	
 	if Input.is_action_just_pressed("left_attack") and bow_equiped and bow_cooldown:
+		$arrow_sound.play()
 		is_shooting = true
 		bow_cooldown = false
 		var arrow_instance = arrow.instantiate()
@@ -153,7 +154,8 @@ func enemy_attack():
 
 func dash():
 	speed = speed * 3
-	$dash.start()
+	$dash_timer.start()
+	$dash_sound.play()
 
 func _on_timer_timeout() -> void:
 	speed = 100

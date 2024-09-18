@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://b18dtd3ugt1kp"]
+[gd_scene load_steps=46 format=4 uid="uid://b18dtd3ugt1kp"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_hqvv6"]
 [ext_resource type="FontFile" uid="uid://cakhsopuksya2" path="res://Art/kurland.ttf" id="1_pcegc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b4f60mj8l3gwd" path="res://Art/BORDER.png" id="6_3jy18"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="7_xdi5w"]
 [ext_resource type="Texture2D" uid="uid://bvm5kbky315q1" path="res://Art/survivalgame-enemy-slime.png" id="8_ak6v3"]
+[ext_resource type="AudioStream" uid="uid://d32fgskeksejt" path="res://GameSounds/Sounds/switch23.ogg" id="10_qhrd5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_602yh"]
 texture = ExtResource("2_op82i")
@@ -664,12 +665,22 @@ theme_override_font_sizes/font_size = 32
 text = "Start
 "
 
+[node name="controls" type="Button" parent="buttons_container" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pcegc")
+theme_override_font_sizes/font_size = 32
+text = "Controls
+"
+
 [node name="quit" type="Button" parent="buttons_container" groups=["button"]]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_pcegc")
 theme_override_font_sizes/font_size = 32
 text = "Quit
 "
+
+[node name="button_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_qhrd5")
 
 [connection signal="area_entered" from="WorldMap/enemy/enemy_hitbox" to="WorldMap/enemy" method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="WorldMap/enemy/detection_area" to="WorldMap/enemy" method="_on_detection_area_body_entered"]

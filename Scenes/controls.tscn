@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://g7xbmx8a7a6p"]
+
+[ext_resource type="FontFile" uid="uid://cakhsopuksya2" path="res://Art/kurland.ttf" id="1_83t8l"]
+[ext_resource type="Script" path="res://Scripts/controls.gd" id="1_jt1u3"]
+[ext_resource type="AudioStream" uid="uid://d32fgskeksejt" path="res://GameSounds/Sounds/switch23.ogg" id="3_obq37"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n27gm"]
+font = ExtResource("1_83t8l")
+font_size = 60
+
+[node name="Comandos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jt1u3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 768.0
+color = Color(0.295867, 0.295866, 0.295866, 1)
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -187.0
+offset_top = -126.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="back" type="Button" parent="BoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_83t8l")
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -441.0
+offset_top = -269.0
+offset_right = 166.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="Label" type="Label" parent="BoxContainer2"]
+layout_mode = 2
+text = "Movement:
+W / Up Arrow: Move Up
+A / Left Arrow: Move Left
+S / Down Arrow: Move Down
+D / Right Arrow: Move Right"
+label_settings = SubResource("LabelSettings_n27gm")
+
+[node name="Label2" type="Label" parent="BoxContainer2"]
+layout_mode = 2
+text = "Dash: Spacebar"
+label_settings = SubResource("LabelSettings_n27gm")
+
+[node name="Label3" type="Label" parent="BoxContainer2"]
+layout_mode = 2
+text = "Shoot: Left Mouse Button"
+label_settings = SubResource("LabelSettings_n27gm")
+
+[node name="button_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_obq37")

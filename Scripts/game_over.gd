@@ -9,12 +9,15 @@ func _ready() -> void:
 func on_button_pressed(button_name):
 	match button_name:
 		"restart":
+			$button_sound.play()
 			transition_screen.scene_path = "res://Scenes/Levels/level_1.tscn"
 			transition_screen.fade_in()
 		
 		"main_menu":
+			$button_sound.play()
 			transition_screen.fade_in()
 			transition_screen.scene_path = "res://Scenes/menu.tscn"
 		"quit":
+			$button_sound.play()
 			transition_screen.can_quit = true
 			transition_screen.fade_in()

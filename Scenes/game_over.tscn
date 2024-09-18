@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnwcbvck7ixjp"]
+[gd_scene load_steps=6 format=3 uid="uid://cnwcbvck7ixjp"]
 
 [ext_resource type="PackedScene" uid="uid://dfp65adtn24jc" path="res://Scenes/world_map.tscn" id="1_6b8co"]
 [ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_7q8fe"]
 [ext_resource type="FontFile" uid="uid://cakhsopuksya2" path="res://Art/kurland.ttf" id="2_injaj"]
+[ext_resource type="AudioStream" uid="uid://d32fgskeksejt" path="res://GameSounds/Sounds/switch23.ogg" id="4_ahic8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vyxbp"]
 font = ExtResource("2_injaj")
@@ -86,3 +87,6 @@ offset_right = -340.946
 offset_bottom = -586.0
 text = "You died"
 label_settings = SubResource("LabelSettings_vyxbp")
+
+[node name="button_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ahic8")

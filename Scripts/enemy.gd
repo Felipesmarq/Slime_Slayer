@@ -48,6 +48,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		area.take_damage(damage)
 
 func take_damage(damage):
+	$slime_damaged.play()
 	health = health - damage
 	if health <= 0 and !dead:
 		death()
